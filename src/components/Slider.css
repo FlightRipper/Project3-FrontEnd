@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.slider {
+    overflow-x: hidden; 
+    position: relative;
+    font-family: 'Avenir',Impact,'Arial Narrow Bold', sans-serif; 
+    -webkit-font-smoothing: antialiased;
+    height: 38rem;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 85rem;
+}
+.flex { 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+}
+.slider-wrapper {
+    position: relative;
+    margin: 0 0 0 12vw;
+}
+
+.slide-image img {width: 28vw;  
+    height: 100%;
+    cursor: pointer;}
+.slide-content {
+    width: 46vw; 
+    color: #000000; 
+    padding: 4rem 22rem 4rem 3rem;
+}
+.slide-date {
+    color: #C0202E; 
+    font-size: 1.1vw; 
+    font-weight: 400; 
+    letter-spacing: 0.1vw; 
+    padding-bottom: 1.4vw;
+}
+.slide-title {
+    font-size: 1.2vw; 
+    font-weight: 400; 
+    letter-spacing: 0.07vw; 
+    line-height: 1.55vw; 
+    padding-bottom: 1.8vw;
+}
+.slide-text {
+    font-size: 0.80vw; 
+    line-height: 1.2vw; 
+    opacity: 0.8; 
+    padding-bottom: 4vw;
+}
+.slide-more {
+    font-weight: 400; 
+    letter-spacing: 0.1vw; 
+    float: left; 
+    font-size: 0.9vw;
+}
+.hasan-arrows{
+    width: 80px;
+    top: 80%; 
+    right: 10%; 
+    position: absolute; 
+} 
+.arrow {
+    display: inline-block; 
+    position: absolute; 
+    width: 1.2vw; 
+    height: 1.2vw; 
+    background: transparent; 
+    text-indent: -9999px; 
+    border-top: unset; 
+    border-left: unset; 
+    transition: all .1s ease-in-out; 
+    text-decoration: none; 
+    color: transparent;
+}
+.arrow:hover {
+    border-right: 8px solid #C0202E;
+    border-left: unset;
+    border-top: unset;
+
+    border-bottom: 8px solid #C0202E;
+    border-width: 0.25vw;
+}
+.arrow:before {
+    display: block; 
+    height: 200%; 
+    width: 200%; 
+    margin-left: -50%; 
+    margin-top: -50%; 
+    content: ""; 
+    transform: rotate(45deg);
+}
+.arrow.prev {transform: rotate(135deg); left: 0;}
+.arrow.next {transform: rotate(-45deg); right: 0;}

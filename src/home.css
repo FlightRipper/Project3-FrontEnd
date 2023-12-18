@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    max-width: 100%;
+}
+.body-section{
+    padding: 2.188rem 4.688rem;
+    font-family: "Avenir",sans-serif;
+}
+.video-section{
+    margin-bottom: 2.188rem;
+    text-align: center;
+}
+.video{
+  max-width: 100%;
+}
+.carousel-section{
+    padding: 0.313rem 0rem;
+}
+.title{
+    border-bottom: 1px solid black;
+}
+.title h1{
+    font-size: 2rem;
+    letter-spacing: 0.188rem;
+}
+.red{
+    color: #C0202E;
+}
+.carousel{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    place-content: center;
+    padding: 5.188rem 0rem;
+}
+.carousel-container{
+    width: 83.125rem;
+    height: 27.813rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.item1,.item3{
+    width: 22.188rem;
+    height: 22.5rem;
+    opacity: 0.6;
+}
+.item1 img,.item2 img, .item3 img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.item2{
+    width: 27.813rem;
+    height: 27.813rem;
+    box-shadow: rgba(0, 30, 43, 0.3) 0px 4px 10px -4px;
+    position: relative;
+}
+.gray-card{
+    width: 22.188rem;
+    height: 22.5rem;
+    background-color: gray;
+}
+.arrows{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 34.563rem;
+    height: auto;
+    
+}
+.carousel-btns{
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border: 1px solid #C0202E;
+    border-radius: 50%; 
+    cursor: pointer;
+}
+.details{
+    position: absolute;
+    background-color: rgba(0,0,0,0.65);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+.details-title{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0.8rem;
+}
+.description{
+    color: white;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin: 0.8rem;
+}

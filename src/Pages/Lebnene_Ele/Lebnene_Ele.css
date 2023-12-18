@@ -1,0 +1,39 @@
+.lebneneEle-img-center {
+    display: flex;
+    justify-content: center;
+}
+
+.lebneneEle-img {
+    width: 100vw;
+    max-width: 100vw;
+    object-fit: cover;
+    height: 70vh;
+    margin: 2.188rem 4.688rem ;
+}
+
+.wrapper {
+    width: 100%;
+    margin: auto;
+    padding: 0 4.688rem;
+    font-family: 'Avenir',Impact,'Arial Narrow Bold', sans-serif;
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.lebneneEle-story {
+    margin-top: 2rem;
+    padding: 0 0 3rem 0;
+}
+
+.lebneneEle-h3 {
+    color: #000000    ;
+    border-bottom: 1px solid #000000;
+}
+
+.h3-red {
+    color: #C0202E;
+}
+
+.lebneneEle-text {
+    padding-top: 1rem;
+}

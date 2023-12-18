@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    max-width: 100%;
+}
+
+
+.body-section{
+    padding: 2.188rem 4.688rem;
+    font-family: "Avenir",sans-serif;
+}
+.image-section{
+    margin-bottom: 2.188rem;
+    text-align: center;
+}
+
+.aboutus-image{
+    max-width: 100%;
+    width:100%;
+    height: 70vh;
+}
+
+.title{
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+}
+
+.title h1{
+    font-size: 2rem;
+    letter-spacing: 0.188rem;
+}
+.red{
+    color: #C0202E;
+}
+
+.story-description, .mission-description, .vision-description{
+    margin:2.188rem 0;
+    text-align: justify;
+    line-height: 2;
+}
+.teams-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.teams{
+    width: 75%;
+    margin-top: 2.188rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    flex-direction:row;
+    text-align: center;
+    gap: 4rem;
+    
+}
+.carousel-buttons{
+    margin-top: 2.188rem;
+}
+.previous-button{
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 0; 
+    padding: 0; 
+    width:6.25rem;
+    height:1.875rem; 
+    background-image: url('../src/assets/left-arrow.png'); 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 40% auto;
+
+}
+.next-button{
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 0; 
+    padding: 0; 
+    width:6.25rem; 
+    height: 1.875rem;
+    background-image: url('../src/assets/right-arrow.png'); 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 40% auto;
+}
+
+@media (max-width:  768px) {
+    .teams {
+        width: 90%; /* Adjust the width for smaller screens */
+        gap: 2rem; /* Adjust the gap for smaller screens */
+    }
+
+    .title h1{
+        font-size: 1.5rem;
+        letter-spacing: 0.188rem;
+    }
+    .aboutus-image{
+        height: auto;
+    }
+    .body-section{
+        padding: 1.5rem 2rem;
+        font-family: "Avenir",sans-serif;
+    }
+  }

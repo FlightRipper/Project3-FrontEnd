@@ -1,0 +1,20 @@
+@import '../fonts/fonts.css';
+footer{
+    background-color: #f0f0f0;
+    font-family: "Avenir",sans-serif;
+    font-weight: 500;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* position: fixed;
+    bottom: 0;
+    left:0;
+    right: 0; */
+    /* overflow: hidden; */
+}
+.footer-inner-div{
+    width:fit-content;
+}
