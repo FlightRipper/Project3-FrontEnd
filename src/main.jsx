@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './Home.jsx'
-import News from './News.jsx'
-import Aboutus from './AboutUs.jsx'
+import Home from './Pages/Home/home.jsx'
+import News from './Pages/News/news.jsx'
+import Aboutus from './Pages/AboutUs/aboutUs.jsx'
 import { createBrowserRouter,redirect,RouterProvider} from 'react-router-dom'
 import axios from 'axios'
-import Article from './components/article.jsx'
+import Article from './components/Article/article.jsx'
 import App from './App.jsx'
-import Lebnenele from '/src/Pages/Lebnene_Ele/Lebnene_Ele.jsx'
-import AdminDashboard from './admin-dashboard.jsx'
-import AdminArticles from './components/admin-article.jsx'
+import Lebnenele from './Pages/Lebnene_Ele/lebnene_Ele.jsx'
+import AdminDashboard from './Pages/AdminDashboard/admin-dashboard.jsx'
+import AdminArticles from './components/AdminArticle/admin-article.jsx'
 
 
 const router = createBrowserRouter([

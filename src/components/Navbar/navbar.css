@@ -1,0 +1,127 @@
+@import "../../fonts/fonts.css";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.navbar-header{
+    padding: 0rem 4.688rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 9.563rem;
+    font-size: 12px;
+    font-family: "Avenir",sans-serif;
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 70%, rgba(242,242,242,1) 100%);
+}
+.header-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-section:first-child{
+    padding-top: 1.313rem;
+}
+.header-section:nth-child(2){
+    padding-top: 0.625rem;
+    padding-bottom: 1.375rem;
+}
+.header-logo{
+    width: 11.25rem;
+    height: 4.25rem;
+}
+.header-btns{
+    display: flex;
+    align-items: baseline;
+    gap: 1.44rem;
+}
+.place-items-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.438rem;
+}
+.header-subscribe-btn{
+    width:10.313rem;
+    height: 2.625rem;
+    color: #C0202E;
+    border: 1px solid #C0202E;
+    border-radius: 0.438rem;
+    background-color: white;
+    cursor: pointer;
+}
+.header-donate-btn{
+    width: 5.75rem;
+    height: 2.625rem;
+    border: none;
+    border-radius: 0.438rem;
+    background-color: #C0202E;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-items ul{
+    display: flex;
+    align-items: baseline;
+    gap: 6.938rem;
+    list-style: none;
+    font-weight: 700;
+}
+.nav-items li a{
+    color: black;
+    text-decoration: none;
+
+}
+.nav-items li a:hover{
+    color: #C0202E;
+}
+
+.header-search-bar{
+    width: 17.5rem;
+    height: 2.5rem;
+    padding: 0 1.375rem;
+    outline: none;
+    border: 1px solid #D9D9D9;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    display: none; /* Initially hidden */
+    z-index: 3;
+  }
+.active-link{
+    color: #C0202E !important;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0.438rem;
+    /* margin-top: 0.625rem; */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    /* display: block; */
+}
