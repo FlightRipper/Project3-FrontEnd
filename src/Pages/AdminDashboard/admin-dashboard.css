@@ -1,0 +1,149 @@
+@import "../../fonts/fonts.css";
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Avenir",sans-serif;
+}
+html, body ,#root{
+    height: 100%;
+    width: 100%;
+}
+.admin-dashboard{
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    
+}
+.side-bar{
+    width: 21.875rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4.875rem;
+border-right: 1px solid rgba(237, 237, 236, 0.85);
+background-color: white;
+}
+.side-bar--header{
+    padding: 2.5rem 0 0 3.125rem  ;
+}
+.side-bar--logo{
+    width: 13.375rem;
+    height: 6rem;
+}
+.side-bar--list{
+    color: #056839;
+}
+.side-bar--title{
+    width: 15.625rem;
+    height: 3.375rem;
+    background-color: #D0EFB0;
+    margin-left: 3.125rem;
+    margin-right: 3.125rem;
+    margin-bottom: 1.25rem;
+    border-radius:0.5rem ;
+    padding-top: .75rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.side-bar--flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding-left: 1.313rem;
+}
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    list-style: none;
+    color: black;
+}
+.nav-list li{
+    padding:.5rem .5rem .5rem 3.125rem;
+    position: relative;
+ 
+}
+.nav-list li a{
+    color: black;
+    text-decoration: none;
+}
+.nav-list li:hover::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    background-color: #056839;
+}
+.dashboard-body{
+    height: 100%;
+    width: 100%;
+    padding: 2.5rem 3.563rem;
+    gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.search{
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search input{
+    width: 54.125rem;
+    height: 100%;
+    outline: none;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: .5rem;
+    padding:0 1.75rem;
+    font-size: 1rem;
+    font-weight: normal;
+    color: black;
+}
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+.profile-img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.other-pages{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+.active-Link{
+    background-color: #D0EFB0;
+}
+.active-Link::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    background-color: #056839;
+}
