@@ -78,7 +78,7 @@
     height: 3rem;
     margin-top: 1.25rem;
     margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
+    margin-left: 11rem;
     border-radius: .5rem;
     background: rgb(173,29,41);
     font-size: 1rem;
@@ -90,7 +90,7 @@
 }
 .popup-send-btn:hover{
     background: rgb(173,29,41);
-background: linear-gradient(90deg, rgba(173,29,41,1) 5%, rgba(192,32,46,1) 45%, rgba(211,99,109,1) 100%);
+    background: linear-gradient(90deg, rgba(173,29,41,1) 5%, rgba(192,32,46,1) 45%, rgba(211,99,109,1) 100%);
 }
 .white{
     background-color: white;

@@ -5,18 +5,18 @@ import "./aboutus.css";
 import { useLoaderData } from "react-router-dom";
 
 const AboutUs = () => {
-const {aboutusData,teamsData}=useLoaderData();
+const {aboutusData,teamsData} = useLoaderData();
 console.log(aboutusData)
 console.log(teamsData)
   
-  const teamsPerPage=2;
+  const teamsPerPage = 4;
   const totalTeams=teamsData.length;
 
   const [currentPage,setCurrentPage]=useState(0);
 
-  const startTeam= currentPage*teamsPerPage;
-  const endTeam= startTeam+teamsPerPage;
-  const visibleTeams=teamsData.slice(startTeam,endTeam);
+  const startTeam = currentPage*teamsPerPage;
+  const endTeam = startTeam+teamsPerPage;
+  const visibleTeams = teamsData.slice(startTeam,endTeam);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => (prevPage + 1) % (totalTeams / teamsPerPage));
@@ -86,16 +86,15 @@ console.log(teamsData)
             </h1>
           </div>
           <div className="teams-container">
-          <div className="teams">
-    
-          {visibleTeams.map((team) => (
+            <div className="teams">
+              {visibleTeams.map((team) => (
                 <Team key={team._id} image={team.image} name={team.name} title={team.title} />
               ))}
-          </div>
-          <div className="carousel-buttons">
-            <button className='previous-button' onClick={handlePrevPage}>Previous</button>
-            <button className='next-button' onClick={handleNextPage}>Next</button>
-          </div>
+            </div>
+            <div className="carousel-buttons">
+              <button className='previous-button' onClick={handlePrevPage}>Previous</button>
+              <button className='next-button' onClick={handleNextPage}>Next</button>
+            </div>
           </div>
         </div>
 

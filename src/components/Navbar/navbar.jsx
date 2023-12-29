@@ -48,14 +48,29 @@ const Navbar = () =>{
     <div className="header-section">
         <Link onClick={()=> setActiveLink("Home")} className={(activeLink=='Home')?'active-link':''} to="Home"><img src={logo} alt="logo-TPLL" className="header-logo"/></Link>
         <div className="header-btns">
-            <button onClick={handleShowSubscription} className="header-subscribe-btn place-items-center">
+            {/* <button  className="header-subscribe-btn place-items-center">
                 <img src={subscribe} alt="subscribe to newsletter" />
-                <p>Join our newsletter</p>
+                <p></p>
+            </button> */}
+            <button class="continue-application" onClick={handleShowSubscription}>
+                <div>
+                    <div class="pencil"></div>
+                    <div class="folder">
+                        <div class="top">
+                            <svg viewBox="0 0 24 27">
+                                <path d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="paper"></div>
+                    </div>
+                </div>
+                Join our newsletter
             </button>
-            <button className="header-donate-btn place-items-center">
-                <img src={donate} alt="donate-heart"/>
-                <p>Donate</p>
+            <button className="header-donate-btn">
+                Donate
+                <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H24V24H0z" fill="none"></path><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path></svg>
             </button>
+
         </div>
     </div>
     <div className="header-section">
