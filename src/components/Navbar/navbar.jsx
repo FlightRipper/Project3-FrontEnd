@@ -6,12 +6,15 @@ import donate from '../../assets/heart.png'
 import Subscribe from "../Subscribe/subscribe"
 import ContactUs from "../ContactUs/contactUs.jsx"
 import { Link } from "react-router-dom";
+import Donation from "../Donation/donation.jsx"
 
 const Navbar = () =>{
     const [showSubscription,setShowSubscription]= useState(false);
     const [showContactUs, setShowContactUs]= useState(false);
     const [activeLink,setActiveLink]= useState("Home");
     const [showMenu,setShowMenu] =useState(false);
+    const [showDonationModel, setShowDonationModel]= useState(false);
+
     const handelMenu = () =>{
         setShowMenu(true);
     }
@@ -43,6 +46,12 @@ const Navbar = () =>{
         setShowContactUs(false);
         setShowSubscription(false);
       }
+
+    const donationModel = () => {
+        e.preventDefault();
+        setShowDonationModel(!showDonationModel);
+        document.querySelector('.overlay').style.display = 'block';
+    }
     return(
 <header className="navbar-header">
     <div className="header-section">
@@ -52,7 +61,7 @@ const Navbar = () =>{
                 <img src={subscribe} alt="subscribe to newsletter" />
                 <p>Join our newsletter</p>
             </button>
-            <button className="header-donate-btn place-items-center">
+            <button onClick={donationModel} className="header-donate-btn place-items-center">
                 <img src={donate} alt="donate-heart"/>
                 <p>Donate</p>
             </button>
