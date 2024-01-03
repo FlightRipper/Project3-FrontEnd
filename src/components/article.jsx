@@ -38,7 +38,9 @@ const Article = () =>{
                         </div>
                         <div className="article-body">
                             <div className="article-body-img">
-                            <img src={`https://tpll-31oj.onrender.com/${article.image}`} alt="" />
+                            {/* <img src={`https://tpll-31oj.onrender.com/${article.image}`} alt="" /> */}4
+                            {<img src={`http://localhost:4000/uploads/${article.image}`} alt="" />}
+
                             </div>
                             <br className="sep-line" />
                             <div>
@@ -81,7 +83,8 @@ const Article = () =>{
                                  <div className="post-card">
                             <article>
                                 <div className="card-img">
-                                <img src={`https://tpll-31oj.onrender.com/${each.image}`} alt="" />
+                                {/* <img src={`https://tpll-31oj.onrender.com/${each.image}`} alt="" /> */}
+                                <img src={`https://localhost:4000/uploads/${each.image}`} alt="" />
                                 </div>
                                 <div className="post-card--body">
                                     <h3>{`${each.title}`}</h3>

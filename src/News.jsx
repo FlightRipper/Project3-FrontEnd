@@ -8,7 +8,8 @@ const News = () =>{
         <div className="news">
             <div className="news-posts">
             {articles.map(ar=>{
-                return <Link key={ar._id} to={`${ar._id}`}> <Post  article={ar} months={months}/></Link>
+                return <Link key={ar._id} to={`/${ar._id}`}> <Post article={ar} months={months}/></Link>
+            
             })}                
             </div>
 
@@ -26,7 +27,8 @@ export const Post = ({article}) =>{
         <div className="post">
                     
                     <div className="post-image">
-                        <img src={`https://tpll-31oj.onrender.com/${article.image}`} alt="" />
+                        {/* <img src={`https://tpll-31oj.onrender.com/${article.image}`} alt="" /> */}
+                        <img src={`http://localhost:4000/uploads/${article.image}`} alt="" />
                     </div>
                     <div className="post-details">
                         <div className="article">

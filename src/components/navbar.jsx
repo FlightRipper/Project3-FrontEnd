@@ -5,11 +5,13 @@ import subscribe from "../assets/subscribe.png"
 import donate from '../assets/heart.png'
 import Subscribe from "./subscribe"
 import ContactUs from "./contactUs"
+import Registration from "./registration-page"
 import { Link } from "react-router-dom";
 
 const Navbar = () =>{
     const [showSubscription,setShowSubscription]= useState(false);
     const [showContactUs, setShowContactUs]= useState(false);
+    const [showRegistration, setShowRegistration]= useState(false);
     const [activeLink,setActiveLink]= useState("Home");
     const [showMenu,setShowMenu] =useState(false);
     const handelMenu = () =>{
@@ -25,6 +27,7 @@ const Navbar = () =>{
         setShowContactUs(!showContactUs);
         document.querySelector('.overlay').style.display = 'block';
     }
+
     const handleHideContact = () =>{
         document.querySelector('.overlay').style.display = 'none';
         setShowContactUs(false);
@@ -38,6 +41,17 @@ const Navbar = () =>{
         document.querySelector('.overlay').style.display = 'none';
         setShowSubscription(false);
     }
+    const handleShowRegistration = (e) =>{
+        e.preventDefault();
+        setShowRegistration(!showRegistration);
+        document.querySelector('.overlay').style.display = 'block';
+    }
+    
+    const handleHideRegistration = () =>{
+        document.querySelector('.overlay').style.display = 'none';
+        setShowRegistration(false);
+    }
+
     const handleCloseOverlay = () => {
         document.querySelector('.overlay').style.display = 'none';
         setShowContactUs(false);
@@ -75,6 +89,7 @@ const Navbar = () =>{
                     </li>
                     
                 <li ><Link onClick={handleShowContact} to="#" >Contact Us</Link></li>
+                <li ><Link onClick={handleShowRegistration} to="#" > Sign up</Link></li>
             </ul>
         </div>
         <input type="text" placeholder="search..." className="header-search-bar"/>
@@ -82,7 +97,7 @@ const Navbar = () =>{
     <div className="overlay" onClick={handleCloseOverlay}></div>
     {showSubscription?<Subscribe onHide={handleHideSubscription}/>:null}
     {showContactUs?<ContactUs onHide={handleHideContact}/>:null}
-
+    {showRegistration?<Registration onHide={handleHideRegistration}/>:null}
 
 </header>
     );

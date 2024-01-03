@@ -1,4 +1,5 @@
 @import '../fonts/fonts.css';
+
 .subscribe-popup{
     width: 31.25rem;
     height: fit-content;
@@ -87,6 +88,10 @@
     outline: none;
     border: none;
     cursor: pointer;
+    position: relative;
+    left: 50%;
+ 
+    transform: translate(-50%);
 }
 .popup-send-btn:hover{
     background: rgb(173,29,41);

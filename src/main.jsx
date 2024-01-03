@@ -11,7 +11,6 @@ import Lebnenele from '/src/Pages/Lebnene_Ele/Lebnene_Ele.jsx'
 import AdminDashboard from './admin-dashboard.jsx'
 import AdminArticles from './components/admin-article.jsx'
 
-
 const router = createBrowserRouter([
   {
     path:'*',
@@ -22,23 +21,31 @@ const router = createBrowserRouter([
         index:true,
         element:<Home/>,
         loader: async ()=>{
-          const response = await axios.get("https://tpll-31oj.onrender.com/api/article/");
+          try{
+          // const response = await axios.get("https://tpll-31oj.onrender.com/article");
+          const response = await axios.get("http://localhost:4000/article/");
           return response.data;
-        }
+        } catch (error) {
+          console.error(error.message);
+         }
+         
+      }
       },
       {
         path:'news',
         element:<News/>,
         loader: async ()=>{
-          const response = await axios.get("https://tpll-31oj.onrender.com/api/article/");
+          // const response = await axios.get("https://tpll-31oj.onrender.com/article/");
+          const response = await axios.get("http://localhost:4000/article/");
           return response.data;
         },
       },
       {
-        path:'news/:postId',
+        path:'news/:id',
         element:<Article/>,
         loader: async({params})=>{
-          const response =await axios.get(`https://tpll-31oj.onrender.com/api/article/${params.postId}`);
+          // const response =await axios.get(`https://tpll-31oj.onrender.com/article/${params.id}`);
+          const response =await axios.get(`http://localhost:4000/article/${params.id}`);
           return response.data;
         }
       },
@@ -48,8 +55,10 @@ const router = createBrowserRouter([
         element: <Aboutus/>,
         loader: async()=>{
           // console.log('fetching about us')
-          const aboutus=await axios.get('https://tpll-31oj.onrender.com/api/about-us/')
-          const teams= await axios.get('https://tpll-31oj.onrender.com/api/team/')
+          const aboutus=await axios.get("http://localhost:4000/aboutus/");
+          // const aboutus=await axios.get('https://tpll-31oj.onrender.com/aboutus/')
+          const teams=await axios.get("http://localhost:4000/team/");
+          // const teams= await axios.get('https://tpll-31oj.onrender.com/team/')
           return {aboutusData: aboutus.data, teamsData: teams.data}
         }
       },
@@ -57,8 +66,10 @@ const router = createBrowserRouter([
         path:'lebnenele',
         element: <Lebnenele />,
         loader: async () => {
-          const lebneneEle = await axios.get('https://tpll-31oj.onrender.com/api/lebneneEle/')
-          const milestones = await axios.get('https://tpll-31oj.onrender.com/api/milestone/')
+          // const lebneneEle = await axios.get('https://tpll-31oj.onrender.com/lebneneEle/')
+          const lebneneEle = await axios.get('http://localhost:4000/lebneneEle/')
+          // const milestones = await axios.get('https://tpll-31oj.onrender.com/mileStone/')
+          const milestones = await axios.get('http://localhost:4000/mileStone/')
           return {lebneneleData: lebneneEle.data, milestonesData: milestones.data};
         }
       },
@@ -66,7 +77,8 @@ const router = createBrowserRouter([
         path:'subscribe',
         action:async ({request}) =>{
           const data= await request.formData();
-          const response= await axios.post('https://tpll-31oj.onrender.com/api/news/subscribe/',{
+          // const response= await axios.post('https://tpll-31oj.onrender.com/news/subscribe/',{
+            const response= await axios.post('http://localhost:4000/news/subscribe/',{
             body:data,
           })
           if(!response){
@@ -85,7 +97,8 @@ const router = createBrowserRouter([
           path:'News',
           element:<AdminArticles/>,
           loader: async ()=>{
-            const response =await axios.get("https://tpll-31oj.onrender.com/api/article/");
+            // const response =await axios.get("https://tpll-31oj.onrender.com/article/");
+            const response = await axios.get("http://localhost:4000/article/");
             return response.data;
           } ,
           
@@ -93,8 +106,17 @@ const router = createBrowserRouter([
         {
           path:'News/delete/:id',
           action:async ({params})=>{
-            await axios.delete(`https://tpll-31oj.onrender.com/api/article/${params.id}`);
+            // await axios.delete(`https://tpll-31oj.onrender.com/article/${params.id}`);
+            await axios.delete(`http://localhost:4000/article/${params.id}`);
              return redirect("/admin/dashboard/News");
+          }
+        }  ,
+        {
+          path:'News/edit/:id',
+          action:async ({params})=>{
+            // await axios.delete(`https://tpll-31oj.onrender.com/article/${params.id}`);
+            await axios.patch(`http://localhost:4000/article/${params.id}`);
+          
           }
         }  
       ]
@@ -109,5 +131,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router}/>
   </React.StrictMode>,
 );
-
 
