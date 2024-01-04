@@ -1,7 +1,7 @@
 // EditForm.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import "./EditForm.css"
 
 const EditForm = ({ article, onClose }) => {
   const [editedData, setEditedData] = useState({
@@ -64,10 +64,12 @@ const EditForm = ({ article, onClose }) => {
         Image:
         <input type="file" accept="image/*" onChange={(e) => setEditedData({...editedData, image:e.target.files[0]})}/>
       </label>
+      <div className='button-container'>
       <button type="submit">Save Changes</button>
       <button type="button" onClick={onClose}>
         Cancel
       </button>
+      </div>
     </form>
   );
 };

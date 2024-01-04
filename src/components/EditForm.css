@@ -1,0 +1,64 @@
+
+.edit-form {
+    max-width: 440px;
+    margin: auto;
+
+  }
+
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #056839;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius:10px;
+    margin-top: 20px;
+ 
+    
+  }
+  
+  button[type="button"] {
+    background-color: #c0202e;
+
+  }
+
+  /* News.css */
+
+  .post-card {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .post-card.edit-form-open {
+    position: relative;
+    z-index: 1; /* Set a higher z-index value when the form is open */
+  }
+  .post-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if there's not enough space */
+    gap: 100px; /* Adjust the gap between articles as needed */
+  }
+  
+  /* EditForm.css */
+  .edit-form-container {
+    position: relative;
+    z-index: 2;
+    max-width: 440px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
