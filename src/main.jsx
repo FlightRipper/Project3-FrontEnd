@@ -83,13 +83,10 @@ const router = createBrowserRouter([
         element: <Lebnenele />,
         loader: async () => {
           // const lebneneEle = await axios.get('https://tpll-31oj.onrender.com/lebneneEle/')
-          const lebneneEle = await axios.get(
-            "http://localhost:4000/lebneneEle/"
-          );
+          const lebneneEle = await axios.get("http://localhost:4000/lebeneneEle");
+          console.log("Server response for lebneneEle:", lebneneEle.data);
           // const milestones = await axios.get('https://tpll-31oj.onrender.com/mileStone/')
-          const milestones = await axios.get(
-            "http://localhost:4000/mileStone/"
-          );
+          const milestones = await axios.get("http://localhost:4000/mileStone" );
           return {
             lebneneleData: lebneneEle.data,
             milestonesData: milestones.data,

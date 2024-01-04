@@ -30,8 +30,13 @@ const AboutUs = () => {
     <>
       <section className="body-section">
         <div className="image-section">
-        <img className="aboutus-image" src={`http://localhost:4000/uploads/${aboutusData[0].image}`} alt="About Us Image" />
-
+          {aboutusData && aboutusData.length > 0 && (
+            <>
+              {aboutusData.map((item, index) => (
+                <img key={index} className="aboutus-image" src={`http://localhost:4000/uploads/${item.image}`} alt={`About Us Image ${index}`} />
+              ))}
+            </>
+          )}
         </div>
         <br />
         <br />
@@ -39,13 +44,14 @@ const AboutUs = () => {
           <>
             <div className="story-section">
               <div className="title">
-           
                 <h1>
                   Our <span className="red">Story</span>
                 </h1>
               </div>
               <div className="story-description">
-              <p>{aboutusData[0].story}</p>
+                {aboutusData.map((item, index) => (
+                  <p key={index}>{item.story}</p>
+                ))}
               </div>
             </div>
             <br />
@@ -58,7 +64,9 @@ const AboutUs = () => {
                 </h1>
               </div>
               <div className="mission-description">
-              <p>{aboutusData[0].mission}</p>
+                {aboutusData.map((item, index) => (
+                  <p key={index}>{item.mission}</p>
+                ))}
               </div>
             </div>
             <br />
@@ -71,7 +79,9 @@ const AboutUs = () => {
                 </h1>
               </div>
               <div className="vision-description">
-                <p>{aboutusData[0].vision}</p>
+                {aboutusData.map((item, index) => (
+                  <p key={index}>{item.vision}</p>
+                ))}
               </div>
             </div>
           </>
@@ -86,21 +96,13 @@ const AboutUs = () => {
           </div>
           <div className="teams-container">
             <div className="teams">
-              {/* {teamsData && teamsData.length > 0 && (
+              {teamsData && teamsData.length > 0 && (
                 <>
                   {visibleTeams.map((team) => (
-                    <Team key={team._id} image={team.image} name={team.name} title={team.title} />
+                    <Team key={team._id} teamsData={team} />
                   ))}
                 </>
-              )} */}
-              {teamsData && teamsData.length > 0 && (
-  <>
-    {visibleTeams.map((team) => (
-      <Team key={team._id} teamsData={team} />
-    ))}
-  </>
-)}
-
+              )}
             </div>
             <div className="carousel-buttons">
               <button className="previous-button" onClick={handlePrevPage}>
