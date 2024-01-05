@@ -15,6 +15,7 @@ import Lebnenele from "/src/Pages/Lebnene_Ele/Lebnene_Ele.jsx";
 import AdminDashboard from "./admin-dashboard.jsx";
 import AdminArticles from "./components/admin-article.jsx";
 import AdminAboutUs from "./components/admin-about.jsx";
+import AdminLebneneEle from "./components/admin-lebneneEle.jsx";
 const router = createBrowserRouter([
   {
     path: "*",
@@ -155,6 +156,35 @@ const router = createBrowserRouter([
         loader: async ({ params }) => {
           const response = await axios.patch( `http://localhost:4000/aboutus/${params.id}`);
           return response.data;
+        },
+      },
+      {
+        path: "LebneneEle",
+        element: <AdminLebneneEle />,
+        loader: async () => {
+          const lebneneEleData = await axios.get("http://localhost:4000/lebeneneEle")
+          const milestones = await axios.get("http://localhost:4000/mileStone" );
+          return {
+            lebneneleData: lebneneEleData.data,
+            milestonesData: milestones.data,
+          };
+        },
+      },
+      {
+        path: "LebneneEle/edit/:id",
+        element: <AdminLebneneEle />,
+        loader: async ({params}) => {
+          const response= await axios.get(`http://localhost:4000/lebeneneEle/${params.id}`)
+          const milestones = await axios.get(`http://localhost:4000/mileStone/${params.id}` );
+          return response.data;
+        },
+      },
+      {
+        path: "LebneneEle/delete/:id",
+        action: async ({ params }) => {
+          await axios.delete(`http://localhost:4000/lebeneneEle/${params.id}`);
+          await axios.delete(`http://localhost:4000/mileStone/${params.id}`);
+          return redirect("/admin/dashboard/LebneneEle");
         },
       },
     ],
