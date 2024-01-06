@@ -17,6 +17,7 @@ import AdminArticles from "./components/admin-article.jsx";
 import AdminAboutUs from "./components/admin-about.jsx";
 import AdminLebneneEle from "./components/admin-lebneneEle.jsx";
 import ContactUs from "./components/contactUs.jsx";
+import AdminMessages from "./components/admin-messages.jsx"
 const router = createBrowserRouter([
   {
     path: "*",
@@ -87,15 +88,12 @@ const router = createBrowserRouter([
         element: <ContactUs />,
         loader: async () => {
           try {
-            // Fetch initial data, adjust the endpoint and method accordingly
-            const initialData = await axios.get("http://localhost:4000/contactUs");
-      
-            // Fetch AddMessageData using POST request
+        
             const AddMessage = await axios.post("http://localhost:4000/contactUs");
             console.log("Server response for contactus:", AddMessage.data);
       
             return {
-              initialData: initialData.data,
+            
               AddMessageData: AddMessage.data,
             };
           } catch (error) {
@@ -206,6 +204,21 @@ const router = createBrowserRouter([
           await axios.delete(`http://localhost:4000/mileStone/${params.id}`);
           return redirect("/admin/dashboard/LebneneEle");
         },
+      },
+      {
+        path: "messages",
+        element: <AdminMessages/>,
+        loader: async () => {
+         
+        
+            const Messages = await axios.get("http://localhost:4000/contactUs");
+            console.log("Server response for contactus:",Messages.data);
+      
+            return {
+            
+              MessagesData: Messages.data,
+            };
+          }
       },
     ],
   },
