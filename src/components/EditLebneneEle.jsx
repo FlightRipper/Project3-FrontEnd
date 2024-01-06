@@ -55,7 +55,7 @@ console.log("milestone ID to be updated:", mileStone && mileStone.id);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='edit-form'>
       <label>
         story:
         <input type="text" name="story" value={editedData.story} onChange={handleChange} />

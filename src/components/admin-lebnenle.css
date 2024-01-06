@@ -1,0 +1,34 @@
+.lebneneele-card-container {
+    margin: 20px;
+  }
+  
+  table {
+    width: 150%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .lebneneele-card-container img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .admin-edit--button,
+  .admin-delete--button {
+    display: inline-block; /* or inline-flex */
+    padding: 8px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  

@@ -1,0 +1,45 @@
+
+.aboutus-card-container table {
+  width:200%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+ 
+}
+
+.aboutus-card-container th, .aboutus-card-container td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.aboutus-card-container th {
+  background-color: #f2f2f2;
+}
+
+.aboutus-card-container .aboutus-card {
+  transition: background-color 0.3s;
+}
+
+.aboutus-card-container .aboutus-card:hover {
+  background-color: #f9f9f9;
+}
+
+.aboutus-card-container .admin-edit--button {
+  background-color: #056839;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.aboutus-card-container .admin-edit--button:hover {
+  background-color: #045d33;
+}
+
+.edit-form-container {
+  max-width: 450px;
+  margin: auto;
+  margin-top: 20px;
+}
+

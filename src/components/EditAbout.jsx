@@ -42,7 +42,7 @@ const EditAboutUs = ({ aboutUs, onClose }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='edit-form'>
       <label>
         Story:
         <input type="text" name="story" value={editedAboutUs.story} onChange={handleChange} />

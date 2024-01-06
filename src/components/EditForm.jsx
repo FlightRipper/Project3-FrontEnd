@@ -47,7 +47,7 @@ const EditForm = ({ article, onClose }) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='edit-form'>
       <label>
         Title:
         <input type="text" name="title" value={editedData.title} onChange={handleChange} />
