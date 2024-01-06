@@ -16,6 +16,7 @@ import AdminDashboard from "./admin-dashboard.jsx";
 import AdminArticles from "./components/admin-article.jsx";
 import AdminAboutUs from "./components/admin-about.jsx";
 import AdminLebneneEle from "./components/admin-lebneneEle.jsx";
+import ContactUs from "./components/contactUs.jsx";
 const router = createBrowserRouter([
   {
     path: "*",
@@ -81,6 +82,30 @@ const router = createBrowserRouter([
           };
         },
       },
+      {
+        path: "contactus",
+        element: <ContactUs />,
+        loader: async () => {
+          try {
+            // Fetch initial data, adjust the endpoint and method accordingly
+            const initialData = await axios.get("http://localhost:4000/contactUs");
+      
+            // Fetch AddMessageData using POST request
+            const AddMessage = await axios.post("http://localhost:4000/contactUs");
+            console.log("Server response for contactus:", AddMessage.data);
+      
+            return {
+              initialData: initialData.data,
+              AddMessageData: AddMessage.data,
+            };
+          } catch (error) {
+            console.error("Error during data fetching:", error);
+            return { error: "Failed to fetch data" };
+          }
+        },
+      },
+      
+      
       {
         path: "subscribe",
         action: async ({ request }) => {
