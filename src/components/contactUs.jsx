@@ -53,7 +53,7 @@ const ContactUs = ({onHide}) =>{
             <h1 className='popup-title'>Contact Us</h1>
            </header>
            <div className="popup-body">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Full name</label>
             <input type="text" value={userName} className={`popup-input ${UserNameBackground} `} placeholder='user name' onChange={handleUserNameInput}  autoFocus/>
             <label htmlFor="email">Email</label>
             <input type="text" value={email} className={`popup-input ${EmailBackground} `} placeholder='Email' onChange={handleEmailInput}/>

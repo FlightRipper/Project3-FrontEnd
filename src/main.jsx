@@ -55,21 +55,6 @@ const router = createBrowserRouter([
           return response.data;
         },
       },
-
-      // {
-      //   path:'aboutus/:id',
-      //   element: <Aboutus/>,
-      //   loader: async({params})=>{
-      //     // console.log('fetching about us')
-      //     console.log('params.id:', params.id);
-      //     const aboutus=await axios.get(`http://localhost:4000/aboutus/${params.id}`);
-      //     console.log('aboutus response:', aboutus);
-      //     // const aboutus=await axios.get('https://tpll-31oj.onrender.com/aboutus/')
-      //     const teams=await axios.get("http://localhost:4000/team/");
-      //     // const teams= await axios.get('https://tpll-31oj.onrender.com/team/')
-      //     return {aboutusData: aboutus.data, teamsData: teams.data}
-      //   }
-      // },
       {
         path: "aboutus",
         element: <Aboutus />,
@@ -84,10 +69,12 @@ const router = createBrowserRouter([
         element: <Lebnenele />,
         loader: async () => {
           // const lebneneEle = await axios.get('https://tpll-31oj.onrender.com/lebneneEle/')
-          const lebneneEle = await axios.get("http://localhost:4000/lebeneneEle");
+          const lebneneEle = await axios.get(
+            "http://localhost:4000/lebeneneEle"
+          );
           console.log("Server response for lebneneEle:", lebneneEle.data);
           // const milestones = await axios.get('https://tpll-31oj.onrender.com/mileStone/')
-          const milestones = await axios.get("http://localhost:4000/mileStone" );
+          const milestones = await axios.get("http://localhost:4000/mileStone");
           return {
             lebneneleData: lebneneEle.data,
             milestonesData: milestones.data,
@@ -154,7 +141,9 @@ const router = createBrowserRouter([
         path: "Aboutus/edit/:id",
         element: <Article />,
         loader: async ({ params }) => {
-          const response = await axios.patch( `http://localhost:4000/aboutus/${params.id}`);
+          const response = await axios.patch(
+            `http://localhost:4000/aboutus/${params.id}`
+          );
           return response.data;
         },
       },
@@ -162,8 +151,10 @@ const router = createBrowserRouter([
         path: "LebneneEle",
         element: <AdminLebneneEle />,
         loader: async () => {
-          const lebneneEleData = await axios.get("http://localhost:4000/lebeneneEle")
-          const milestones = await axios.get("http://localhost:4000/mileStone" );
+          const lebneneEleData = await axios.get(
+            "http://localhost:4000/lebeneneEle"
+          );
+          const milestones = await axios.get("http://localhost:4000/mileStone");
           return {
             lebneneleData: lebneneEleData.data,
             milestonesData: milestones.data,
@@ -173,9 +164,13 @@ const router = createBrowserRouter([
       {
         path: "LebneneEle/edit/:id",
         element: <AdminLebneneEle />,
-        loader: async ({params}) => {
-          const response= await axios.get(`http://localhost:4000/lebeneneEle/${params.id}`)
-          const milestones = await axios.get(`http://localhost:4000/mileStone/${params.id}` );
+        loader: async ({ params }) => {
+          const response = await axios.get(
+            `http://localhost:4000/lebeneneEle/${params.id}`
+          );
+          const milestones = await axios.get(
+            `http://localhost:4000/mileStone/${params.id}`
+          );
           return response.data;
         },
       },
