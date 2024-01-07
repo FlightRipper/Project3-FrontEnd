@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import "./navbar.css"
 import logo from "../../assets/Logo.png"
 import subscribe from "../../assets/subscribe.png"
@@ -45,13 +45,21 @@ const Navbar = () =>{
         document.querySelector('.overlay').style.display = 'none';
         setShowContactUs(false);
         setShowSubscription(false);
+        setShowDonationModel(false);
       }
 
-    const donationModel = () => {
-        e.preventDefault();
-        setShowDonationModel(!showDonationModel);
-        document.querySelector('.overlay').style.display = 'block';
-    }
+    const handleShowDonation = () => {
+      setShowDonationModel(!showDonationModel);
+      document.querySelector('.overlay').style.display = 'block';
+  
+    };
+
+  const handleHideDonation = () =>{
+      document.querySelector('.overlay').style.display = 'none';
+      setShowDonationModel(false);
+  }
+
+
     return(
 <header className="navbar-header">
     <div className="header-section">
@@ -75,7 +83,7 @@ const Navbar = () =>{
                 </div>
                 Join our newsletter
             </button>
-            <button className="header-donate-btn">
+            <button className="header-donate-btn" onClick={handleShowDonation}>
                 Donate
                 <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H24V24H0z" fill="none"></path><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path></svg>
             </button>
@@ -106,7 +114,7 @@ const Navbar = () =>{
     <div className="overlay" onClick={handleCloseOverlay}></div>
     {showSubscription?<Subscribe onHide={handleHideSubscription}/>:null}
     {showContactUs?<ContactUs onHide={handleHideContact}/>:null}
-
+    {showDonationModel ? <Donation onHide={handleHideDonation} /> : null}
 
 </header>
     );
