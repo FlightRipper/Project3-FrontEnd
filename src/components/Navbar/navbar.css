@@ -8,9 +8,10 @@
     padding: 0rem 4.688rem;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width:92%;
     height: 9.563rem;
     font-size: 12px;
+    margin-left: 75px;
     font-family: "Avenir",sans-serif;
     background: rgb(255,255,255);
 background: linear-gradient(180deg, rgba(255,255,255,1) 70%, rgba(242,242,242,1) 100%);

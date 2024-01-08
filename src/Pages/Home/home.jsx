@@ -8,7 +8,7 @@ import "./home.css"
 const Home = () =>{
     const articles= useLoaderData();
     const images =articles.map(a => {
-    return`https://tpll-31oj.onrender.com/${a.image}`
+    return`http://localhost:4000/uploads/${a.image}`
     })
     const [index,setIndex]= useState(0);
     const [visible,setVisible]= useState(false);

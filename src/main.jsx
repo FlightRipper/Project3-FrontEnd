@@ -15,14 +15,15 @@ import AdminArticles from './components/AdminArticle/admin-article.jsx'
 const router = createBrowserRouter([
   {
     path:'*',
-    element:<App/>,
+    element: 
+   <App/>,
     children:[
       {
         path:'Home',
         index:true,
         element:<Home/>,
         loader: async ()=>{
-          const response = await axios.get("https://tpll-31oj.onrender.com/api/article/");
+          const response = await axios.get("http://localhost:4000/article/");
           return response.data;
         }
       },
@@ -30,17 +31,30 @@ const router = createBrowserRouter([
         path:'news',
         element:<News/>,
         loader: async ()=>{
-          const response = await axios.get("https://tpll-31oj.onrender.com/api/article/");
+          const response = await axios.get(`http://localhost:4000/article/`);
           return response.data;
         },
       },
       {
-        path:'news/:postId',
-        element:<Article/>,
-        loader: async({params})=>{
-          const response =await axios.get(`https://tpll-31oj.onrender.com/api/article/${params.postId}`);
-          return response.data;
-        }
+       path: 'news/:postId',
+element: <Article />,
+loader: async ({ params }) => {
+  try {
+    const response = await axios.get(`http://localhost:4000/article/${params.postId}`);
+    const response2 = await axios.get(`http://localhost:4000/article/`);
+
+    const articleData = response.data; 
+    const allarticleData = response2.data; 
+
+
+    return { article: articleData,articles: allarticleData}; 
+  } catch (error) {
+    console.error('Error fetching article:', error);
+    return { article: null };
+  }
+}
+
+        
       },
       
       {
@@ -49,7 +63,7 @@ const router = createBrowserRouter([
         loader: async()=>{
           // console.log('fetching about us')
           const aboutus=await axios.get('https://tpll-31oj.onrender.com/api/about-us/')
-          const teams= await axios.get('https://tpll-31oj.onrender.com/api/team/')
+          const teams= await axios.get('http://localhost:4000/team/')
           return {aboutusData: aboutus.data, teamsData: teams.data}
         }
       },
@@ -62,6 +76,7 @@ const router = createBrowserRouter([
           return {lebneneleData: lebneneEle.data, milestonesData: milestones.data};
         }
       },
+      
       {
         path:'subscribe',
         action:async ({request}) =>{

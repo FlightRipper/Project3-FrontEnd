@@ -81,3 +81,40 @@
     height: 7rem;
   }
 }
+/* team.css */
+.team-card {
+  position: relative;
+}
+
+.member-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.member-description {
+  margin-top: 10px;
+}
+
+.team-member:hover .member-details {
+  opacity: 1;
+  pointer-events: auto;
+  background-color: #272626; /* Background color on hover */
+  padding: 10px; /* Additional padding on hover */
+  border-radius: 5px; /* Border radius on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow on hover */
+}
+
+/* Additional styles for the text on hover */
+
+.team-member:hover .member-description {
+  color: white; /* Text color on hover */
+  font-weight: bold; /* Bold text on hover */
+}
+
+

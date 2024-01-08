@@ -88,7 +88,7 @@ console.log(teamsData)
           <div className="teams-container">
             <div className="teams">
               {visibleTeams.map((team) => (
-                <Team key={team._id} image={team.image} name={team.name} title={team.title} />
+                <Team key={team.id} image={team.image} name={team.name} title={team.title} description={team.description}/>
               ))}
             </div>
             <div className="carousel-buttons">
