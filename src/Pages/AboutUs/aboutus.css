@@ -41,14 +41,12 @@ body{
     text-align: justify;
     line-height: 2;
 }
-
 .teams-container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
 .teams{
     width: 75%;
     margin-top: 2.188rem;
