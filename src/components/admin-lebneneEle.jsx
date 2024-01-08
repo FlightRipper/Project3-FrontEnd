@@ -98,8 +98,10 @@ const AdminLebneneEleList = () => {
             ))}
           </tbody>
         </table>
-        <div className="edit-form-container">
-          {showEditForm && <EditLebneneEle lebneneEle={selectedLebneneEle} onClose={() => setShowEditForm(false)} />}
+        <div className={`edit-formlebneneEle-modal ${showEditForm ? "active" : ""}`}>
+          {showEditForm && (
+            <EditLebneneEle lebneneEle={selectedLebneneEle} onClose={() => setShowEditForm(false)} />
+          )}
         </div>
       </div>
     </>

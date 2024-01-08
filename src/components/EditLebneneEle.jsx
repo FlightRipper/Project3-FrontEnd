@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import "./EditForm.css"
+import "./EditLebneneEle.css"
 
 const EditLebneneEle = ({ lebneneEle, mileStone, onClose }) => {
   const [editedData, setEditedData] = useState({
@@ -55,7 +55,7 @@ console.log("milestone ID to be updated:", mileStone && mileStone.id);
   };
 
   return (
-    <form onSubmit={handleSubmit} className='edit-form'>
+    <form onSubmit={handleSubmit} className='edit-formlebneneEle'>
       <label>
         story:
         <input type="text" name="story" value={editedData.story} onChange={handleChange} />

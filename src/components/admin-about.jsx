@@ -43,7 +43,7 @@ const AdminAboutUs = () => {
           </tbody>
         </table>
       </div>
-      <div className="edit-form-container">
+      <div className={`edit-formAbout-modal ${showEditForm ? "active" : ""}`}>
         {showEditForm && (
           <EditAboutUs aboutUs={selectedAboutUs} onClose={() => setShowEditForm(false)} />
         )}
@@ -58,7 +58,7 @@ export const AdminAboutUsCard = ({ aboutUs, showEditForm, onEdit }) => {
   };
 
   return (
-    <tr className={`aboutus-card ${showEditForm ? "edit-form-open" : ""}`} key={aboutUs.id}>
+    <tr className={`aboutus-card ${showEditForm ? "edit-formAbout-open" : ""}`} key={aboutUs.id}>
       <td>{aboutUs.id}</td>
       <td>{aboutUs.mission}</td>
       <td>{aboutUs.vision}</td>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './EditForm.css';
+import './EditAbout.css';
 
 const EditAboutUs = ({ aboutUs, onClose }) => {
   const [editedAboutUs, setEditedAboutUs] = useState({
@@ -42,7 +42,7 @@ const EditAboutUs = ({ aboutUs, onClose }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='edit-form'>
+    <form onSubmit={handleSubmit} className='edit-formAbout'>
       <label>
         Story:
         <input type="text" name="story" value={editedAboutUs.story} onChange={handleChange} />

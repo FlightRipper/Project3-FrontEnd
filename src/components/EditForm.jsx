@@ -7,12 +7,13 @@ const EditForm = ({ article, onClose }) => {
   const [editedData, setEditedData] = useState({
     title: article.title,
     body: article.body,
+    admin: article.admin,
     date: article.date,
     image: article.image,
   });
 
   console.log('Rendering EditForm');
-
+  const adminUsername = article.admin ? article.admin.username : '';
   const handleChange = (e) => {
     setEditedData(prevState => ({
       ...prevState,
@@ -29,6 +30,7 @@ const EditForm = ({ article, onClose }) => {
     formData.append('title', editedData.title);
     formData.append('body', editedData.body);
     formData.append('date', editedData.date);
+  
     formData.append('image', editedData.image);
     try {
       const response = await axios.patch(`http://localhost:4000/article/${article.id}`, formData, {
@@ -51,6 +53,10 @@ const EditForm = ({ article, onClose }) => {
       <label>
         Title:
         <input type="text" name="title" value={editedData.title} onChange={handleChange} />
+      </label>
+      <label>
+        Author:
+        <input type="text" name="adminUsername" value={editedData.adminUsername} onChange={handleChange} />
       </label>
       <label>
         Body:

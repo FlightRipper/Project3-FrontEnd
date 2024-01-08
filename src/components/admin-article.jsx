@@ -30,11 +30,16 @@ const AdminArticles = () => {
       />
     ))}
 
-  <div className="edit-form-container">
+  {/* <div className="edit-form-container">
     {showEditForm && (
       <EditForm article={selectedArticle} onClose={() => setShowEditForm(false)} />
     )}
-  </div>
+  </div> */}
+    <div className={`edit-form-modal ${showEditForm ? "active" : ""}`}>
+        {showEditForm && (
+          <EditForm article={selectedArticle} onClose={() => setShowEditForm(false)} />
+        )}
+      </div>
   </div>
 </>
 
