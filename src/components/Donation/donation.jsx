@@ -110,12 +110,34 @@ const Donation = ({ onHide }) => {
   // Component rendering
   return (
     <div className="wrapper">
+      
       <div className="payment">
-        <div className="payment-logo">D</div>
-
-        <h2>Donation</h2>
+        <div className="popAndDonation">
+          <button onClick={onHide} className='close-popup-btn pop-donation'>
+                      <svg
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              role="presentation"
+              focusable="false"
+              style={{
+                display: "block",
+                fill: "none",
+                height: 16,
+                width: 16,
+                stroke: "currentcolor",
+                strokeWidth: 3,
+                overflow: "visible"
+              }}
+              >
+            <path d="m6 6 20 20" />
+            <path d="m26 6-20 20" /> </svg>
+          </button>
+          <div className="colorDonation" >Donation</div>
+      </div>
         {!donationFinished ? (
           <div className="form">
+            
             {/* Form content */}
             <div className="card space icon-relative">
               <label className="label">Email:</label>

@@ -11,7 +11,24 @@
   position: relative;
   z-index: 6;
 }
+.popAndDonation{
+  justify-content: center;
+  margin-top: -30px;
+  margin-left: -30px;
+  display: flex;
+  font-weight: 600;
 
+}
+.colorDonation{
+  color: #c0202e;
+  align-items: 600px;
+  font-size: 1.7rem;
+
+}
+.pop-donation{
+  display: flex;
+  margin-left: 20px;
+}
 .payment h2 {
   text-align: center;
   letter-spacing: 2px;
